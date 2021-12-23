@@ -6,15 +6,15 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-	//Validate mobile no
-	public static void validMobileNo(String phone) {
-		Pattern pattern = Pattern.compile("^[0-9]{2}+[ ][0-9]{10}$");
-		Matcher matcher = pattern.matcher(phone);
+	//Validate Password
+	public static void validPassword(String password) {
+		Pattern pattern = Pattern.compile("^[a-zA-Z0-9+-_!@#$%^&*(){}'.,]{8,}");
+		Matcher matcher = pattern.matcher(password);
 
 		if (!matcher.find()) {
-			System.out.println("invalid mobile no.");
+			System.out.println("invalid password.");
 		} else {
-			System.out.println("Valid mobile no.");
+			System.out.println("Valid password.");
 		}
 	}
 	
@@ -23,10 +23,10 @@ public class UserRegistration {
 		System.out.println("----------Welcome To User Registration------------");
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter Mobile no: ");
-		String phone = sc.next();
-		System.out.println("Mobile No is: " + phone);
-		validMobileNo(phone);
+		System.out.println("Enter Password: ");
+		String pass = sc.next();
+		System.out.println("Password is: " + pass);
+		validPassword(pass);
 
 	}
 
